@@ -1,0 +1,143 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {comp wechatPanel::t::798:x}"
+			"$verticalGroup": "par l {comp wechatPanel::l::543:x}"
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "wechatPanel"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+					name: "contentPanel"
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+						name: "inputPanel"
+						"preferredSize": new java.awt.Dimension( 56, 200 )
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+							name: "msgPanel"
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+								"alignment": 2
+								"vgap": 1
+								"hgap": 13
+							} ) {
+								name: "btnPanel"
+								"preferredSize": new java.awt.Dimension( 0, 30 )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "exitBtn"
+									"text": "关闭"
+									"preferredSize": new java.awt.Dimension( 70, 29 )
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "exitBtnActionPerformed", true ) )
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "sendBtn"
+									"text": "发送"
+									"preferredSize": new java.awt.Dimension( 70, 29 )
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "sendBtnActionPerformed", true ) )
+								} )
+							}, new FormLayoutConstraints( class java.lang.String ) {
+								"value": "South"
+							} )
+							add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+								name: "msgScroll"
+								add( new FormComponent( "javax.swing.JTextArea" ) {
+									name: "msgTextArea"
+									"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+								} )
+							}, new FormLayoutConstraints( class java.lang.String ) {
+								"value": "Center"
+							} )
+						}, new FormLayoutConstraints( class java.lang.String ) {
+							"value": "Center"
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "South"
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "dispScroll"
+						add( new FormComponent( "javax.swing.JTextArea" ) {
+							name: "dispTextArea"
+							"editable": false
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "Center"
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+					name: "listPanel"
+					"preferredSize": new java.awt.Dimension( 200, 0 )
+					add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+						name: "tabbedPane"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 2, false )
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "newsScroll"
+							add( new FormComponent( "javax.swing.JList" ) {
+								name: "newsList"
+								"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 3, false )
+								addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "newsListMouseClicked", true ) )
+							} )
+						}, new FormLayoutConstraints( null ) {
+							"title": "消息"
+						} )
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "friendScroll"
+							add( new FormComponent( "javax.swing.JList" ) {
+								name: "friendList"
+								"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 3, false )
+								addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "friendListMouseClicked", true ) )
+							} )
+						}, new FormLayoutConstraints( null ) {
+							"title": "好友"
+						} )
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "flockScroll"
+							add( new FormComponent( "javax.swing.JList" ) {
+								name: "flockList"
+								"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 3, false )
+							} )
+						}, new FormLayoutConstraints( null ) {
+							"title": "群聊"
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "Center"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+						"vgap": 1
+						"hgap": 3
+					} ) {
+						name: "handlePanel"
+						"preferredSize": new java.awt.Dimension( 0, 30 )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "addFriendBtn"
+							"text": "+好友"
+							"preferredSize": new java.awt.Dimension( 70, 29 )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "addFriendBtnActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "addFlockBtn"
+							"text": "+群"
+							"preferredSize": new java.awt.Dimension( 55, 29 )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "deleteBtn"
+							"text": "删除"
+							"preferredSize": new java.awt.Dimension( 63, 29 )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "deleteBtnActionPerformed", true ) )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "South"
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "East"
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 5, 15 )
+			"size": new java.awt.Dimension( 800, 575 )
+		} )
+	}
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>蘑菇街商城</title>
+  </head>
+
+  <body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-2">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          蘑菇街
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./cart.html">购物车</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">我的订单</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">商家后台</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">客服服务</a>
+            </li>
+            <li id="loginNav" class="nav-item">
+              <a class="nav-link" href="./login.html">登录</a>
+            </li>
+            <li id="logoutNav" class="nav-item clearfix hidden">
+              <span id="currentUser" class="nav-link float-left"></span>
+              <span class="nav-link float-left" onclick="logout()">退出</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      
+    </nav>
+    <!-- 搜索栏 -->
+    <div class="container search-box mb-5">
+      <div class="row">
+        <div class="col-lg-3 col-md-4">
+          <a href="#">
+            <img src="img/logo.png" width="200px" alt="蘑菇街">
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-8 mt-3">
+          <div class="serach-bar input-group">
+            <span class="search-choice"> 搜商品 </span>
+            <input type="text" class="search-text" placeholder="输入商品名称">
+            <div class="input-group-append">
+              <input type="submit" class="search-button" value="搜&nbsp;索">
+            </div>
+          </div>
+          <ul class="m-list-group-inline list-search mt-1">
+            <li> <a href="#">裙子</a> </li>
+            <li> <a href="#">包包</a> </li>
+            <li> <a href="#">鞋子</a> </li>
+            <li> <a href="#">短裤</a> </li>
+            <li> <a href="#">连衣裙</a> </li>
+            <li> <a href="#">睡衣</a> </li>
+            <li> <a href="#">鞋子</a> </li>
+            <li> <a href="#">短裤</a> </li>
+            <li> <a href="#">连衣裙</a> </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-3 sm-hidden mt-1">
+          <img src="img/erweima.png" width="230px" alt="二维码">
+        </div>
+      </div>
+
+    </div>
+    <!-- 主标题 -->
+    <div class="main-content">
+      <div class="main-content-imgs">
+        <a href="#" class="carousel-item active">
+          <img src="img/main2.jpg" width="100%" alt="首页图片">
+        </a>
+        <a href="#" class="carousel-item">
+          <img src="img/main1.jpg" width="100%" alt="首页图片">
+        </a>
+        <div class="carousel-indicators-1">
+          <ul class="carousel-ul">
+            <li class="carousel-li" style="background: #fff;"></li>
+            <li class="carousel-li"></li>
+          </ul>
+        </div>
+        <div class="carousel-control left">&lsaquo;</div>
+        <div class="carousel-control right">&rsaquo;</div>
+      </div>
+      <div class="main-content-list">
+        <div class="main-content-list-title">主题市场</div>
+        <ul class="m-list-group content-nav-list">
+          <li class="main-content-catalog">
+            <a href="#" class="catalog-title">上衣</a>
+            <span class="catalog-item">
+              <a href="#">T恤</a>
+              <a href="#">时尚套装</a>
+              <a href="#">卫衣</a>
+            </span>
+          </li>
+          <li class="main-content-catalog">
+            <a href="#" class="catalog-title">裙子</a>
+            <span class="catalog-item">
+              <a href="#">连衣裙</a>
+              <a href="#">半身裙</a>
+              <a href="#">美裙套装</a>
+            </span>
+          </li>
+          <li class="main-content-catalog">
+            <a href="#" class="catalog-title">裤子</a>
+            <span class="catalog-item">
+              <a href="#">牛仔裤</a>
+              <a href="#">休闲裤</a>
+              <a href="#">运动裤</a>
+            </span>
+          </li>
+          <li class="main-content-catalog">
+            <a href="#" class="catalog-title">女鞋</a>
+            <span class="catalog-item">
+              <a href="#">靴子</a>
+              <a href="#">单鞋</a>
+              <a href="#">休闲运动</a>
+            </span>
+          </li>
+          <li class="main-content-catalog">
+            <a href="#" class="catalog-title">包包</a>
+            <span class="catalog-item">
+              <a href="#">双肩包</a>
+              <a href="#">斜挎包</a>
+              <a href="#">迷你小包</a>
+            </span>
+          </li>
+          <li class="main-content-catalog">
+            <a href="#" class="catalog-title">男友</a>
+            <span class="catalog-item">
+              <a href="#">卫衣</a>
+              <a href="#">休闲裤</a>
+              <a href="#">休闲鞋</a>
+            </span>
+          </li>
+          <li class="main-content-catalog">
+            <a href="#" class="catalog-title">居中</a>
+            <span class="catalog-item">
+              <a href="#">四件套</a>
+              <a href="#">被套</a>
+              <a href="#">棉被</a>
+            </span>
+          </li>
+          <li class="main-content-catalog">
+            <a href="#" class="catalog-title">内衣</a>
+            <span class="catalog-item">
+              <a href="#">睡衣</a>
+              <a href="#">内裤</a>
+            </span>
+          </li>
+          <li class="main-content-catalog">
+            <a href="#" class="catalog-title">母婴</a>
+            <span class="catalog-item">
+              <a href="#">萌宝童装</a>
+              <a href="#">孕妇装</a>
+              <a href="#">童鞋</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- 女装 -->
+    <div class="merchant-box container">
+      <div id="womens-product-title"></div>
+      <div id="womens-product"></div>
+    </div>
+    <!-- 男装 -->
+    <div class="merchant-box container">
+      <div id="mens-product-title"></div>
+      <div id="mens-product"></div>
+    </div>
+    <!-- 页脚 -->
+    <div class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="footer-help-tetle">- 新手帮助 -</div>
+            常见问题 &emsp; 自助服务 <br />
+            客服联系 &emsp; 意见反馈
+          </div>
+          <div class="col-md-3">
+            <div class="footer-help-tetle">- 权益保障 -</div>
+            全国包邮 &emsp; 7天无理由退货<br />
+            退货运费补贴 &emsp; 限时发货
+          </div>
+          <div class="col-md-3">
+            <div class="footer-help-tetle">- 支付方式 -</div>
+            微信支付 &emsp; 支付宝 <br />
+            白付美支付 &emsp; 网银
+          </div>
+          <div class="col-md-3">
+            <div class="footer-help-tetle">- 客户端下载 -</div>
+            蘑菇街 &emsp; 美丽说 <br />
+            uni引力 &emsp; other
+          </div>
+        </div>
+        <div class="mt-3 mb-3">
+          <ul class="m-list-group-inline">
+            <li class="footer_mgjinfo_item">关于我们</li>
+            <li class="footer_mgjinfo_item">招聘信息</li>
+            <li class="footer_mgjinfo_item">联系我们</li>
+            <li class="footer_mgjinfo_item">商家入驻</li>
+            <li class="footer_mgjinfo_item">商家后台</li>
+            <li class="footer_mgjinfo_item">蘑菇山学院</li>
+            <li class="footer_mgjinfo_item">商家信息</li>
+            <li class="footer_mgjinfo_item">规则中心</li>
+            <li class="footer_mgjinfo_item">有害信息举报</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+        <div class="footer_hostname"><span>©2019 Mogu.com 杭州卷瓜网络有限公司</span></div>
+        <div class="footer-copyright">
+          <ul class="m-list-group-inline">
+            <li><a href="#">营业执照：0101010101010101010101</a></li>
+            <li><a href="#">网络文化经营许可证：浙网文(2016)0333-1111号</a></li>
+            <li><a href="#">安全责任书</a></li>
+            <li><a href="#">浙公网安备 001010101101号</a></li>
+          </ul>
+          <ul class="m-list-group-inline">
+            <li><a href="#">互联网信息服务资格证书编号：(浙)-经营性-2018-0111</a></li>
+            <li><a href="#">出版物网络交易平台服务经营备案证</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 商品标题模板 -->
+    <script id="t-product-title" type="text/html">
+      <div class="merchat-title">
+        <div class="merchat-sideIcon">&nbsp;</div>
+        <div class="merchat-text">{{title}}</div>
+        <ul class="m-list-group-inline merchat-title-list">
+          {{each items}}
+            <li><a href="{{$value.link}}">{{$value.value}}</a></li>
+          {{/each}}
+        </ul>
+        <a href="javascript:;" id="{{btnId}}" class="float-right">换一批</a>
+      </div>
+    </script>
+    <!-- 商品模板 -->
+    <script id="t-product" type="text/html">
+      <div class="row">
+        <% for(let i=start, j=0; j < 12; i=(i+1)%products.length,j++){ %>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+            <div class="product-card">
+              <a href="#"><img src="<%= products[i].image %>"></a>
+              <p><%= products[i].title %></p>
+              <span>￥<span><%= products[i].price %></span></span>
+              <div class="product-shade">
+                <div class="shade-content">
+                  <button onclick="processAddCart(<%= products[i] %>)">添加购物车</button>
+                </div>
+                <div id="goods_{{products[i].id}}" class="shade-hint">
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </script>
+    
+    <script src="./js/store.js"></script>
+    <script src="./js/template-web.js"></script>
+    <script src="./js/carousel.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+# Editor directories and files
+**/.idea
+**/.vscode
+**/.metadata
+
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+**/.classpath
+**/.project
+**/.settings/
+**/bin/

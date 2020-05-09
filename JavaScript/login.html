@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+    const user = JSON.parse(localStorage.getItem('currentUser'))
+    if (user) {
+      location.href = 'index.html'
+    }
+  </script>
+  <title>登录</title>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">
+        蘑菇街
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./cart.html">购物车</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">我的订单</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">商家后台</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">客服服务</a>
+          </li>
+          <li id="loginNav" class="nav-item">
+            <a class="nav-link" href="./login.html">登录</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+  
+  </nav>
+  <!-- 登录框 -->
+  <div class="login-content">
+    <div class="login-form">
+      <div class="login-form-title">
+        <a href="javascript:;" id="loginTitle" class="active">登录</a>
+        <a href="javascript:;" id="registerTitle">注册</a>
+      </div>
+      <!-- 登录表单 -->
+      <div class="login-form-content">
+        <input class="login-input" type="text" placeholder="用户名">
+        <input class="login-input" type="password" placeholder="密&emsp;码">
+        <button type="button" class="login-btn" onclick="login()">登&emsp;录</button>
+        <div class="login-hint hidden">用户名或密码错误..</div>
+      </div>
+      <!-- 注册表单 -->
+      <div class="login-form-content hidden">
+        <input class="register-input" type="text" placeholder="用户名">
+        <input class="register-input" type="password" placeholder="密&emsp;码">
+        <input class="register-input" type="password" placeholder="确&emsp;认">
+        <button type="button" class="login-btn" onclick="register()">注&emsp;册</button>
+        <div class="register-hint hidden">用户名已存在..</div>
+      </div>
+      <!-- 其他登录方式 -->
+      <div class="login-other">
+        <div class="login-other-title">社交账号登录</div>
+        <div class="login-other-content"> 
+          <img class="weixin-icon"
+            src="https://s10.mogucdn.com/mlcdn/c45406/200303_09kb84laflbiiab492f7fli43c0l3_44x44.png">
+          <span>微信登录</span>
+        </div>
+        <div class="login-other-content"> 
+          <img class="qq-icon"
+            src="https://s10.mogucdn.com/mlcdn/c45406/200303_1ef44bdbe932f23fliea61f2fgjje_44x44.png">
+          <span>QQ登录</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="./js/store.js"></script>
+  <script src="./js/login.js"></script>
+</body>
+</html>

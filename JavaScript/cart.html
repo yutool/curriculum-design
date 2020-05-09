@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+    const user = JSON.parse(localStorage.getItem('currentUser'))
+    if (!user) {
+      location.href = 'login.html'
+    }
+  </script>
+  <title>购物车</title>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">
+        蘑菇街
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./cart.html">购物车</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">我的订单</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" >商家后台</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">客服服务</a>
+          </li>
+          <li id="loginNav" class="nav-item">
+            <a class="nav-link" href="./login.html">登录</a>
+          </li>
+          <li id="logoutNav" class="nav-item clearfix hidden">
+            <span id="currentUser" class="nav-link float-left"></span>
+            <span class="nav-link float-left" onclick="logout()">退出</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container mb-5">
+    <ul class="m-list-group-inline center-nav mb-4">
+      <li class="center-nav-item active">购物车</li>
+      <li class="center-nav-item">我的订单</li>
+      <li class="center-nav-item">回收站</li>
+    </ul>
+    <div class="center-content container">
+      <!-- 购物车 -->
+      <div class="card table-responsive-lg mb-2">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">商品详情</th>
+              <th scope="col">价格</th>
+              <th scope="col">数量</th>
+              <th scope="col">操作</th>
+            </tr>
+          </thead>
+          <tbody id="user-cart">
+          </tbody>
+        </table>
+      </div>
+      <!-- 购物车状态 -->
+      <div class="shopping-cart">
+        <div class="cart-pay clearfix">
+          <div class="float-left">
+            <input type="checkbox" id="AllChecked" class="mt-1">
+            <label class="form-check-label pointer" for="AllChecked">全选</label>
+            <a href="javascript:;" class="ml-3" onclick="batchDelete()">删除选中</a>
+          </div>
+          <div class="float-right">
+            <span class="mr-2">
+              共有 <span id="count">0</span> 件商品，
+              总计：￥ <span id="money">0</span> 元
+            </span>
+            <button class="primary-btn" onclick="pay()">去付款</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 购物车模板 -->
+  <script id="t-cart" type="text/html">
+    {{ each carts }}
+      <tr>
+        <th scope="row">
+          <input type="checkbox" id="{{ $value.id }}" onclick="checkGoods({{ $value.id }})">
+        </th>
+        <td>
+          <img src="{{ $value.image }}" alt="">
+          <span>{{ $value.title }}</span>
+        </td>
+        <td>
+          <span class="goods-price">￥{{ $value.price }}</span>
+        </td>
+        <td>
+          <div class="numBtnGroup">
+            <button onclick="subBtn({{ $value.id }})">-</button>
+            <input id="num_{{$value.id}}" value="{{ $value.num }}" 
+              onblur="numBtn({{$value.id}})">
+            <button onclick="addBtn({{ $value.id }})">+</button>
+          </div>
+        </td>
+        <td>
+          <button class="primary-btn" onclick="deleteGoods({{ $value.id }})">删除</button>
+        </td>
+      </tr>
+    {{ /each }}
+  </script>
+
+  <script src="./js/store.js"></script>
+  <script src="./js/template-web.js"></script>
+  <script src="./js/cart.js"></script>
+</body>
+</html>
