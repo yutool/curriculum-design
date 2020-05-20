@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    const user = JSON.parse(localStorage.getItem('currentUser'))
+    if (!user) {
+      location.href = 'login.html'
+    }
+  </script>
+  <title>购物车</title>
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">
+        蘑菇街
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./cart.html">购物车</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./order.html">我的订单</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">商家后台</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">客服服务</a>
+          </li>
+          <li id="loginNav" class="nav-item">
+            <a class="nav-link" href="./login.html">登录</a>
+          </li>
+          <li id="logoutNav" class="nav-item clearfix hidden">
+            <span id="currentUser" class="nav-link float-left"></span>
+            <span class="nav-link float-left" onclick="logout()">退出</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mb-5">
+    <ul class="m-list-group-inline center-nav mb-4">
+      <li class="center-nav-item">购物车</li>
+      <li class="center-nav-item">我的订单</li>
+      <li class="center-nav-item active">回收站</li>
+    </ul>
+    <div class="center-content container">
+      <!-- 购物车 -->
+      <div class="card table-responsive-lg mb-3">
+        <table class="table m-0">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">商品详情</th>
+              <th scope="col">价格</th>
+              <th scope="col">数量</th>
+              <th scope="col">小计</th>
+            </tr>
+          </thead>
+          <tbody id="user-recycle">
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 购物车模板 -->
+  <script id="t-recycle" type="text/html">
+    {{ each recycles }}
+      <tr class="border">
+        <td colspan="5">
+          <span class="pr-2">下单日期：{{ $value.date }}</span>
+          <span class="pr-2">订单号：{{ $value.id }}</span>
+          <span class="pr-2">总金额：{{ $value.money}}</span>
+          <div class=" float-right">
+            <button class="success-btn" onclick="handlerRecover({{ $value }})">恢复</button>
+            <button class="primary-btn" onclick="handlerDelete({{ $value }})">删除</button>
+          </div>
+        </td>
+      </tr>
+      {{ each $value.orderItem }}
+        <tr>
+          <td colspan="2">
+            <img src="{{ $value.image }}" alt="">
+            <span>{{ $value.title }}</span>
+          </td>
+          <td>
+            <span class="goods-price">￥{{ $value.price }}</span>
+          </td>
+          <td>
+            <span> x {{ $value.num }} </span>
+          </td>
+          <td>
+            <span>{{ $value.price * $value.num }}</span>
+          </td>
+        </tr>
+      {{ /each }}
+    {{ /each }}
+  </script>
+
+  <script src="../js/store.js"></script>
+  <script src="../js/template-web.js"></script>
+  <script src="../js/recycle.js"></script>
+</body>
+
+</html>

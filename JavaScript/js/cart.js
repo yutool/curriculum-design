@@ -3,7 +3,7 @@
  * @author ankoye
  */
 
- // 获取当前登录用户，并设置导航栏
+// 获取当前登录用户，并设置导航栏
 window.onload = function () {
   const result = getCurrentUser()
   const currentUser = document.getElementById('currentUser')
@@ -193,10 +193,57 @@ function pay() {
     }
     if (value == money) {
       alert('付款成功')
+      const order = {
+        id: get_order_no(),
+        date: get_now_date(),
+        orderItem: checkList,
+        money
+      }
+      addOrder(order)
       batchDelete()
       break
     } else {
       value = prompt("输入的金额有误，请重新输入")
     }
   }
+}
+
+// 切换页面
+const navs = document.querySelectorAll('.center-nav-item')
+navs[0].onclick = () => {
+  location.href = 'cart.html'
+}
+navs[1].onclick = () => {
+  location.href = 'order.html'
+}
+navs[2].onclick = () => {
+  location.href = 'recycle.html'
+}
+
+// 生成订单号
+function get_order_no() {
+  var random_no = ""
+  for (let i = 0; i < 6; i++)
+  {
+    random_no += Math.floor(Math.random() * 10)
+  }
+  random_no = new Date().getTime() + random_no
+  return random_no
+}
+
+// 获取当前时间 yyyy-MM-dd HH:mm:ss
+function get_now_date() {
+  var date = new Date()
+  var y = date.getFullYear()
+  var m = date.getMonth() + 1
+  m = m < 10 ? ('0' + m) : m
+  var d = date.getDate()
+  d = d < 10 ? ('0' + d) : d
+  var h = date.getHours()
+  h = h < 10 ? ('0' + h) : h
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+  minute = minute < 10 ? ('0' + minute) : minute
+  second = second < 10 ? ('0' + second) : second
+  return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second
 }

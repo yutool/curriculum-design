@@ -432,13 +432,16 @@ button {
   border-radius: 5px;
   padding: 10px;
 }
-.primary-btn {
+.primary-btn, .success-btn {
   border: 0;
   background: #FF4466;
   color: #fff;
   border-radius: 10px;
   font-size: 13px;
   padding: 3px 10px;
+}
+.success-btn {
+  background: #91b5ea;
 }
 .order-list-item {
   padding: 10px;
