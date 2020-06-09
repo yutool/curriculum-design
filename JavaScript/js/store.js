@@ -17,7 +17,7 @@ function userKey(username) {
 function findUser(form) {
   const user = JSON.parse(localStorage.getItem(userKey(form.username)))
   console.log(user)
-  if (user.password === undefined || user.password === null) {
+  if (!user) {
     return new result(1, '用户不存在')
   } else if (user.password !== form.password) {
     return new result(1, '密码错误')

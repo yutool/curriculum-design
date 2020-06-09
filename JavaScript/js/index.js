@@ -63,7 +63,7 @@ DomWPT.innerHTML = template('t-product-title', womensWearTitle)
 
 var womensWear = {
   start: 0, // 开始下标
-  size: 10, // 需要多少条
+  size: 12, // 需要多少条
   products: [
     { id: '1', image: '../img/woman/1.webp', title: '2020夏季设计感日系气质短袖', price: '62' },
     { id: '2', image: '../img/woman/2.webp', title: '夏装时尚韩版网红气质休闲装', price: '71' },
@@ -111,7 +111,7 @@ DomMWT.innerHTML = template('t-product-title', mensWearTitle)
 
 var mensWear = {
   start: 0,
-  size: 10,
+  size: 12,
   products: [
     { id: '21', image: '../img/man/1.webp', title: '夏季男装短袖男新款潮流帅气', price: '69' },
     { id: '22', image: '../img/man/2.webp', title: '男士T恤短袖圆领韩版修身时尚', price: '49' },

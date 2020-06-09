@@ -130,7 +130,7 @@ function processNum(id, num) {
     item.num = num
     break
   }
-   // 设置选中的数量
+  // 设置选中的数量
   for (const item of checkList) if (item.id == id) {
     item.num = num
     break

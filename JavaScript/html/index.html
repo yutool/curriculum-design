@@ -257,7 +257,7 @@
     <!-- 商品模板 -->
     <script id="t-product" type="text/html">
       <div class="row">
-        <% for(let i=start, j=0; j < 12; i=(i+1)%products.length,j++){ %>
+        <% for(let i=start, j=0; j < size; i=(i+1)%products.length,j++){ %>
           <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
             <div class="product-card">
               <a href="#"><img src="<%= products[i].image %>"></a>
